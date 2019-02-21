@@ -54,9 +54,12 @@ var employeesRef = db.collection('employees');
 // .catch(() => console.log('Failure'));
 
 
-// Retreiving data from the collection
+// Retreiving/Get data from the collection
 employeesRef.get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id}`);
     });
 });
+
+// Using a listener
+// See filter.js

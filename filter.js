@@ -23,3 +23,21 @@ $(document).ready(function() {
                 console.log('clearFilter Filter executed');
             });
 });
+
+// Event listener to execute on any change in the db
+db.collection('employees').onSnapshot( (snapshot) => console.log('Something changed'));
+
+// Event listener with teh type of change
+db.collection('employees').onSnapshot( (snapshot) => {
+    snapshot.docChanges.forEach( (change) => {
+        if(change.type === 'added') {
+            console.log('added');
+        }
+        if(change.type === 'modified') {
+            console.log('modified');
+        }
+        if(change.type === 'removed') {
+            console.log('removed');
+        }
+    })
+});
