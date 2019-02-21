@@ -28,6 +28,32 @@ var employeesRef = db.collection('employees');
 //     isFullTime: true
 // });
 
+// To create a new document
+// var ref = db.collection('émployees').doc('A.Jain');
+
+// ref.set({
+//     fName: 'Abhishek'
+// })
+// .then(() => console.log('Success'))
+// .catch(() => console.log('Failure'));
+ 
+//To Update an existing document (to avoid overwrite) -- use merge
+// var ref = db.collection('émployees').doc('A.Jain');
+// ref.set({
+//     fName: 'Abhishek'
+// }, {
+//    merge: true
+// })
+// .then(() => console.log('Success'))
+// .catch(() => console.log('Failure'));
+
+// Delete
+// var ref = db.collection('émployees').doc('A.Jain');
+// ref.delete()
+// .then(() => console.log('Success'))
+// .catch(() => console.log('Failure'));
+
+
 // Retreiving data from the collection
 employeesRef.get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
