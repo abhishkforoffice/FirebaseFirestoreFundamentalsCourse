@@ -25,11 +25,13 @@ $(document).ready(function() {
 });
 
 // Event listener to execute on any change in the db
-db.collection('employees').onSnapshot( (snapshot) => console.log('Something changed'));
+db.collection('employees').onSnapshot( (snapshot) =>
+ console.log('Something changed')
+);
 
 // Event listener with teh type of change
 db.collection('employees').onSnapshot( (snapshot) => {
-    snapshot.docChanges.forEach( (change) => {
+    snapshot.docChanges().forEach( (change) => {
         if(change.type === 'added') {
             console.log('added');
         }
