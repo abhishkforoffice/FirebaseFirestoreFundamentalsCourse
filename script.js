@@ -48,7 +48,5 @@ $(document ).ready(function() {
         var lName = $(this).closest('tr').find('.lname').text(); //Last Name
     });
 
-    $("#searchEmployee" ).change(function() {
-        console.log('You entered: ', $(this).val());
-      });
+    
 });
