@@ -55,8 +55,8 @@ $(document).ready(function() {
             });
 
             $('#clearFilter').click(function(){
-                // Ordering of tha data
-                employeesRef.orderBy('lName', 'asc').get().then(function(querySnapshot) {
+                // Ordering of tha data & limit its count
+                employeesRef.orderBy('lName', 'asc').limit(1).get().then(function(querySnapshot) {
                     LoadTableData(querySnapshot);
                 });
             });
